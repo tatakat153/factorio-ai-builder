@@ -1,0 +1,59 @@
+{
+  "id": "factorio-ai-builder",
+  "name": "Factorio AI Builder",
+  "version": "0.2.0-beta",
+  "description": "AI-controlled Factorio construction agent. Two profiles: Planner (read-only, strategic) and Executor (write, tactical). Requires bridge service running on localhost:9380.",
+  "trust": "full-access",
+  "contributes": {
+    "configuration": {
+      "properties": {
+        "bridgeUrl": {
+          "type": "string",
+          "title": "桥接服务地址",
+          "default": "http://localhost:9380"
+        }
+      }
+    }
+  },
+  "hanaMetadata": {
+    "profiles": {
+      "planner": {
+        "description": "Factorio 规划角色 - 查看地图、设计方案、圈地查询。只读工具，适合用强推理模型。",
+        "tools": [
+          "factorio_get_overview",
+          "factorio_mark_area",
+          "factorio_get_area_detail",
+          "factorio_unmark_area",
+          "factorio_list_marks",
+          "factorio_get_agent_state",
+          "factorio_get_recipes",
+          "factorio_get_technologies",
+          "factorio_get_inventory",
+          "factorio_start_research",
+          "factorio_craft",
+          "factorio_list_templates",
+          "factorio_connect"
+        ]
+      },
+      "executor": {
+        "description": "Factorio 执行角色 - 行走、建造、挖掘、批量操作。写入工具，适合用便宜快速模型。",
+        "tools": [
+          "factorio_walk_to",
+          "factorio_mine",
+          "factorio_place_entity",
+          "factorio_pickup_entity",
+          "factorio_set_recipe",
+          "factorio_insert_items",
+          "factorio_extract_items",
+          "factorio_build_batch",
+          "factorio_check_batch",
+          "factorio_resume_batch",
+          "factorio_cancel_batch",
+          "factorio_get_agent_state",
+          "factorio_emergency_stop",
+          "factorio_connect"
+        ]
+      }
+    }
+  }
+}
