@@ -1,0 +1,9 @@
+{
+  "name": "factorio-ai-builder",
+  "version": "0.2.0-beta",
+  "title": "Factorio AI Builder",
+  "author": "153 & Ming",
+  "description": "AI-controlled construction agent with sparse perception, batch building, and emergency stop. Designed for external AI agent integration via RCON remote interface.",
+  "factorio_version": "2.0",
+  "dependencies": ["base >= 2.0"]
+}
